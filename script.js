@@ -5,7 +5,12 @@ function volume_sphere() {
 	const submit=document.getElementById("submit");
 	submit.addEventListener("click",vol)
 	function vol(){
-		volume.value=(4/3*Math.PI*parseInt(radius.value)**3).toFixed(4)
+		  if (parseInt(radius.value)===NaN || parseInt(radius.value)<0 ){
+            volume.value=NaN
+        }
+        else{
+            volume.value=(4/3*Math.PI*parseInt(radius.value)**3).toFixed(4)
+        }
 	}
 	
 	
